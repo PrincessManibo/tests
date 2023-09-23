@@ -6,20 +6,20 @@
 </head>
 <body>
 <form action="/save" method="post">
-        <label>Product Name</label>
-        <input type="text" name="Product Name" placeholder="Product Name"> 
+        <label>ProductName</label>
+        <input type="text" name="ProductName" placeholder="ProductName"> 
         <br>
-        <label>Product Description</label>
-        <input type="text" name="Product Description" placeholder="Product Description">
+        <label>ProductDescription</label>
+        <input type="text" name="ProductDescription" placeholder="ProductDescription">
         <br>
-        <label>Product Category</label>
-        <input type="text" name="Product Category" placeholder="Product Category">
+        <label>ProductCategory</label>
+        <input type="text" name="ProductCategory" placeholder="ProductCategory">
         <br>
-        <label>Product Quantity</label>
-        <input type="text" name="Product Quantity" placeholder="Product Quantity">
+        <label>ProductQuantity</label>
+        <input type="text" name="ProductQuantity" placeholder="ProductQuantity">
         <br>
-        <label>Product Price</label>
-        <input type="text" name="Product Price" placeholder="Product Price"> 
+        <label>ProductPrice</label>
+        <input type="text" name="ProductPrice" placeholder="ProductPrice"> 
         <br>
         <input type="submit" value="save"> 
     </form>
@@ -27,21 +27,21 @@
     <h1>Product</h1>
     <table border="1">
         <tr>
-            <th>Product Name</th>
-            <th>Product Description</th>
-            <th>Product Category</th>
-            <th>Product Quantity</th>
-            <th>Product Price</th>
+            <th>ProductName</th>
+            <th>ProductDescription</th>
+            <th>ProductCategory</th>
+            <th>ProductQuantity</th>
+            <th>ProductPrice</th>
             <th>Action</th>
             
         </tr>
         <?php foreach ($product as $pr): ?>
             <tr>
-                <td><?= $pr['Product Name'] ?></td>
-                <td><?= $pr['Product Description'] ?></td>
-                <td><?= $pr['Product Category'] ?></td>
-                <td><?= $pr['Product Quantity'] ?></td>
-                <td><?= $pr['Product Price'] ?></td>
+                <td><?= $pr['ProductName'] ?></td>
+                <td><?= $pr['ProductDescription'] ?></td>
+                <td><?= $pr['ProductCategory'] ?></td>
+                <td><?= $pr['ProductQuantity'] ?></td>
+                <td><?= $pr['ProductPrice'] ?></td>
                 <td><a href="/edit/<?= $pr['id'] ?>">Update</a>
                     <a href="/Delete/<?= $pr['id'] ?>">Delete</a> 
                 </td>

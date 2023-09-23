@@ -31,11 +31,11 @@ class ProductController extends BaseController
 
     // Validate the form data and retrieve the updated values
     $data = [
-        'Product Name' => $this->request->getVar('Product Name'),
-        'Product Description' => $this->request->getVar('Product Description'),
-        'Product Category' => $this->request->getVar('Product Category'),
-        'Product Quantity' => $this->request->getVar('Product Quantity'),
-        'Product Price' => $this->request->getVar('Product Price'),
+        'ProductName' => $this->request->getVar('ProductName'),
+        'ProductDescription' => $this->request->getVar('ProductDescription'),
+        'ProductCategory' => $this->request->getVar('ProductCategory'),
+        'ProductQuantity' => $this->request->getVar('ProductQuantity'),
+        'ProductPrice' => $this->request->getVar('ProductPrice'),
     ];
 
     // Use the update method provided by CodeIgniter's Model to update the product
@@ -45,17 +45,17 @@ class ProductController extends BaseController
     return redirect()->to('edit')->with('success', 'Product updated successfully');
 }
 
-    public function Save()
+    public function save()
     {
         $data = [
-            'Product Name' => $this->request->getVar('Product Name'),
-            'Product Description' => $this->request->getVar('Product Description'),
-            'Product Category' => $this->request->getVar('Product Category'),
-            'Product Quantity' => $this->request->getVar('Product Quantity'),
-            'Product Price' => $this->request->getVar('Product Price'),
+            'ProductName' => $this->request->getVar('ProductName'),
+            'ProductDescription' => $this->request->getVar('ProductDescription'),
+            'ProductCategory' => $this->request->getVar('ProductCategory'),
+            'ProductQuantity' => $this->request->getVar('ProductQuantity'),
+            'ProductPrice' => $this->request->getVar('ProductPrice'),
         ];
-        $this->product->Save($data);
-        return redirect()->to('product');
+        $this->product->save($data);
+        return view('product',$data);
 
     }
     public function product($product)
