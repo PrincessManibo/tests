@@ -1,0 +1,327 @@
+ERROR - 2023-09-23 14:03:59 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: YES) in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', '', '', '', 3306, '', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(68): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->PrincessManibo()
+#8 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: YES) in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\tests\tests\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\tests\tests\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(68): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->PrincessManibo()
+#7 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#8 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-09-23 14:03:59 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `production`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ProductController.php(68): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->PrincessManibo()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:05:09 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', Array)
+#8 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-09-23 14:05:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `production` SET `Product` `Name` = :Product Name:, `Product` `Description` = :Product Description:, `Product` `Category` = :Product Category:, `Product` `Quantity` = :Product Quantity:, `Product` `Price` = :Product Price:
+WHERE `production`.`Id` IN :production.Id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+CRITICAL - 2023-09-23 14:05:20 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\ProductController:Delete/$1"
+in SYSTEMPATH\Router\Router.php on line 477.
+ 1 SYSTEMPATH\Router\Router.php(477): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\ProductController:Delete/$1')
+ 2 SYSTEMPATH\Router\Router.php(184): CodeIgniter\Router\Router->checkRoutes('Delete/1')
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\Router->handle('Delete/1')
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+CRITICAL - 2023-09-23 14:05:23 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\ProductController:Delete/$1"
+in SYSTEMPATH\Router\Router.php on line 477.
+ 1 SYSTEMPATH\Router\Router.php(477): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\ProductController:Delete/$1')
+ 2 SYSTEMPATH\Router\Router.php(184): CodeIgniter\Router\Router->checkRoutes('Delete/1')
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\Router->handle('Delete/1')
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:06:22 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Pr' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\tests\tests\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(58): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->save()
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#11 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-09-23 14:06:22 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Pr' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `production` (`Product` `Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Product` `Price`) VALUES (:Product Name:, :Product Description:, :Product Category:, :Product Quantity:, :Product Price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\ProductController.php(58): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->save()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:11:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Pr' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\tests\tests\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(58): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->Save()
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#11 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-09-23 14:11:44 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Pr' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `production` (`Product` `Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Product` `Price`) VALUES (:Product Name:, :Product Description:, :Product Category:, :Product Quantity:, :Product Price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\ProductController.php(58): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Save()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:11:49 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Pr' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\tests\tests\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(58): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->Save()
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#11 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-09-23 14:11:49 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Pr' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `production` (`Product` `Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Product` `Price`) VALUES (:Product Name:, :Product Description:, :Product Category:, :Product Quantity:, :Product Price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\ProductController.php(58): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Save()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:11:53 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Pr' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\tests\tests\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(58): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->Save()
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#11 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-09-23 14:11:53 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Pr' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `production` (`Product` `Name`, `Product` `Description`, `Product` `Category`, `Product` `Quantity`, `Product` `Price`) VALUES (:Product Name:, :Product Description:, :Product Category:, :Product Quantity:, :Product Price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\ProductController.php(58): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Save()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:11:58 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', Array)
+#8 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-09-23 14:11:58 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `production` SET `Product` `Name` = :Product Name:, `Product` `Description` = :Product Description:, `Product` `Category` = :Product Category:, `Product` `Quantity` = :Product Quantity:, `Product` `Price` = :Product Price:
+WHERE `production`.`Id` IN :production.Id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:13:37 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', Array)
+#8 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-09-23 14:13:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `production` SET `Product` `Name` = :Product Name:, `Product` `Description` = :Product Description:, `Product` `Category` = :Product Category:, `Product` `Quantity` = :Product Quantity:, `Product` `Price` = :Product Price:
+WHERE `production`.`Id` IN :production.Id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:13:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', Array)
+#8 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-09-23 14:13:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `production` SET `Product` `Name` = :Product Name:, `Product` `Description` = :Product Description:, `Product` `Category` = :Product Category:, `Product` `Quantity` = :Product Quantity:, `Product` `Price` = :Product Price:
+WHERE `production`.`Id` IN :production.Id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
+ERROR - 2023-09-23 14:13:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1 in C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\tests\tests\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\laragon\www\tests\tests\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\laragon\www\tests\tests\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\laragon\www\tests\tests\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\laragon\www\tests\tests\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\laragon\www\tests\tests\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\laragon\www\tests\tests\app\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', Array)
+#8 C:\laragon\www\tests\tests\system\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+#9 C:\laragon\www\tests\tests\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 C:\laragon\www\tests\tests\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\tests\tests\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\tests\tests\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-09-23 14:13:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`Name` = NULL, `Product` `Description` = NULL, `Product` `Category` = NULL, `Pro' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `production` SET `Product` `Name` = :Product Name:, `Product` `Description` = :Product Description:, `Product` `Category` = :Product Category:, `Product` `Quantity` = :Product Quantity:, `Product` `Price` = :Product Price:
+WHERE `production`.`Id` IN :production.Id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\ProductController.php(42): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\tests\\tests\\public\\index.php')
