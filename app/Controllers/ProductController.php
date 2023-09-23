@@ -55,7 +55,7 @@ class ProductController extends BaseController
             'ProductPrice' => $this->request->getVar('ProductPrice'),
         ];
         $this->product->save($data);
-        return view('product',$data);
+        return redirect()->to('/product');
 
     }
     public function product($product)
